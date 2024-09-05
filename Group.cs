@@ -61,7 +61,7 @@ namespace student
             Console.WriteLine(GetGroupSpecialization());
             foreach(var student in students)
             {
-                students.Sort();
+                //students.Sort();
                 Console.WriteLine(student.GetSurname() + " " + student.GetName());
             }
         }
@@ -112,6 +112,20 @@ namespace student
                 }
             }
             ExpelStudent(expel);
+        }
+
+        public static bool operator ==(Group left, Group right)
+        {
+            if(left.students.Count == right.students.Count)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(Group left, Group right)
+        {
+            return !(left == right);
         }
     }
 }

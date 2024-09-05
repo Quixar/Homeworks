@@ -1,0 +1,15 @@
+/Users/quixar/vscode/study/Homeworks/bin/Debug/net8.0/Homeworks
+/Users/quixar/vscode/study/Homeworks/bin/Debug/net8.0/Homeworks.deps.json
+/Users/quixar/vscode/study/Homeworks/bin/Debug/net8.0/Homeworks.runtimeconfig.json
+/Users/quixar/vscode/study/Homeworks/bin/Debug/net8.0/Homeworks.dll
+/Users/quixar/vscode/study/Homeworks/bin/Debug/net8.0/Homeworks.pdb
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.AssemblyInfoInputs.cache
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.AssemblyInfo.cs
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.csproj.CoreCompileInputs.cache
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.sourcelink.json
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.dll
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/refint/Homeworks.dll
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.pdb
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/Homeworks.genruntimeconfig.cache
+/Users/quixar/vscode/study/Homeworks/obj/Debug/net8.0/ref/Homeworks.dll

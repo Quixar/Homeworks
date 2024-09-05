@@ -1,88 +1,77 @@
-﻿
-class Fraction
+﻿using System;
+
+namespace student;
+
+class Program
 {
-    public int numerator;
-    public int denominator;
-
-    public static Fraction operator +(Fraction left, Fraction right)
-    {
-        Fraction result = new Fraction();
-        result.numerator = left.numerator * right.denominator + right.numerator * left.denominator;
-        result.denominator = left.denominator * right.denominator;
-        return result;
-    }
-
-    public static Fraction operator -(Fraction fraction)
-    {
-        Fraction result = new Fraction();
-        result.numerator = -fraction.numerator;
-        result.denominator = fraction.denominator;
-        return result;
-    }
-
-    public static Fraction operator ++(Fraction origin)
-    {
-        Fraction copy = new Fraction();
-        copy.numerator = origin.numerator + origin.denominator;
-        copy.denominator = origin.denominator;
-        return copy;
-    }
-
-    public static Fraction operator --(Fraction origin)
-    {
-        Fraction copy = new Fraction();
-        copy.numerator = origin.numerator - origin.denominator;
-        copy.denominator = origin.denominator;
-        return copy;
-    }
-
-    public static bool operator ==(Fraction left, Fraction right)
-    {
-        double first = (double)left.numerator / left.denominator;
-        double second = (double)right.numerator / right.denominator;
-        if(first == second)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public static bool operator !=(Fraction left, Fraction right)
-    {
-        return !(left == right);
-    }
-
-    public static bool operator true(Fraction origin)
-    {
-        return origin.numerator != 0;
-    }
-
-    public static bool operator false(Fraction origin)
-    {
-        return origin.numerator == 0;
-    }
-
-    public override string ToString()
-    {
-        return this.numerator + "/" + this.denominator;
-    }
-}
-
-internal class Program
-{
-    private static void Main(string[] args)
+    static void Main(string[] args)
     {
         Console.Clear();
-        Fraction left = new Fraction();
-        Fraction right = new Fraction();
-        left.numerator = 1;
-        left.denominator = 2;
-        right.numerator = 2;
-        right.denominator = 4;
+        Student s = new Student();
+        Student s2 = new Student();
+        Student s3 = new Student();
+        Group g = new Group();
+        Group g2 = new Group();
 
-        if(left)
+        s.AddExam(12);
+        s2.AddExam(6);
+        s3.AddExam(7);
+
+        if(s)
         {
             System.Console.WriteLine("true");
         }
+
+        else
+        {
+            System.Console.WriteLine("false");
+        }
+
+        if(s > s2)
+        {
+            System.Console.WriteLine("true");
+        }
+
+        if(s2 < s)
+        {
+            System.Console.WriteLine("true");
+        }
+
+        if(s == s2)
+        {
+            System.Console.WriteLine("true");
+        }
+
+        if(s != s2)
+        {
+            System.Console.WriteLine("true");
+        }
+
+        g.AddStudent(s);
+        g.AddStudent(s2);
+        g.AddStudent(s3);
+
+        g2.AddStudent(s);
+        g2.AddStudent(s2);
+        g2.AddStudent(s3);
+
+        
+        if(g == g2)
+        {
+            System.Console.WriteLine("true");
+        }
+        else
+        {
+            System.Console.WriteLine("false");
+        }
+
+        // g.ExpelBadStudent();
+        // g.ShowGroup();
+        // Group copy = new Group();
+        
+        // g.ShowGroup();
+        // g.TransferStudent(s, copy);
+        // g.ShowGroup();
+        // copy.ShowGroup();
     }
 }

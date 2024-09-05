@@ -9,6 +9,8 @@ namespace student
         string address;
         string phone;
 
+        bool expel = false;
+
         DateTime birthday;
 
         List<int> homeworks;
@@ -165,6 +167,48 @@ namespace student
         public object Clone()
         {
             return new Student(this);
+        }
+
+        public static bool operator true(Student student)
+        {
+            return !student.expel;
+        }
+
+        public static bool operator false(Student student)
+        {
+            return student.expel;
+        }
+
+        public static bool operator ==(Student left, Student right)
+        {
+            if(left.CalculateAvg() == right.CalculateAvg())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(Student left, Student right)
+        {
+            return !(left == right);
+        }
+
+        public static bool operator >(Student left, Student right)
+        {
+            if(left.CalculateAvg() > right.CalculateAvg())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator <(Student left, Student right)
+        {
+            if(left.CalculateAvg() < right.CalculateAvg())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -1,78 +1,187 @@
 ﻿using System;
+using System.Security.Cryptography;
 
-namespace student;
+abstract class Storage
+{
+    public string Name { get; set; }
+    public string Manufacturer { get; set; }
+    public string Model { get; set; }
+    public int Quantity { get; set; }
+    public double Price { get; set; } 
+
+    public Storage(string name, string manufacturer, string model, int quantity, double price) 
+    {
+        Name = name;
+        Manufacturer = manufacturer;
+        Model = model;
+        Quantity = quantity;
+        Price = price;
+    }
+
+    public abstract void Print();
+    public abstract void LoadFile();
+    public abstract void SaveFile();
+
+    public override string ToString()
+    {
+        return "Name: " + Name + "Manufacturer: " + Manufacturer + "Model: " + Model + "Quantity: " + Quantity + "Price: " + Price;
+    }
+}
+
+class Flash : Storage
+{
+    public int Capacity { get; set; }
+    public int UsbSpeed { get; set; }
+
+    public Flash(string name, string manufacturer, string model, int quantity, double price, int capacity, int usbSpeed) 
+    : base(name, manufacturer, model, quantity, price)
+    {
+        Capacity = capacity;
+        UsbSpeed = usbSpeed;
+    }
+
+    public override void Print()
+    {
+        Console.WriteLine("Name: " + Name + ", Manufacturer: " + Manufacturer + ", Model: " + Model + ", Capacity: " + Capacity + "GB, USB Speed: " + UsbSpeed + "MB/s, Quantity: " + Quantity + ", Price: " + Price);
+    }
+
+
+    public override void LoadFile()
+    {
+        System.Console.WriteLine("Loading flash data from file...");
+    }
+
+    public override void SaveFile()
+    {
+        System.Console.WriteLine("Saving flash data to file...");
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + "Capacity: " +Capacity + "USB Speed: " + UsbSpeed;
+    }
+}
+
+class HDD : Storage
+{
+    public int DiskSize{ get; set; }
+    public int UsbSpeed{ get; set; }
+
+    public HDD(string name, string manufacturer, string model, int quantity, double price, int diskSize, int usbSpeed) 
+    : base(name, manufacturer, model, quantity, price)
+    {
+        DiskSize = diskSize;
+        UsbSpeed = usbSpeed;
+    }
+
+    public override void Print()
+    {
+        // Исправление: Используем конкатенацию строк с оператором +
+        Console.WriteLine("Name: " + Name + ", Manufacturer: " + Manufacturer + ", Model: " + Model + ", Disk Size: " + DiskSize + "GB, USB Speed: " + UsbSpeed + "MB/s, Quantity: " + Quantity + ", Price: " + Price);
+    } 
+
+    public override void LoadFile()
+    {
+        System.Console.WriteLine("Loading HDD data from file...");
+    }
+
+    public override void SaveFile()
+    {
+        System.Console.WriteLine("Saving HDD data to file...");
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + "Disk Size: " + DiskSize + "USB Speed: " + UsbSpeed;
+    }
+}
+
+class DVD : Storage
+{
+    public int ReadSpeed { get; set; }
+    public int WriteSpeed { get; set; }
+
+    public DVD(string name, string manufacturer, string model, int quantity, double price, int readSpeed, int writeSpeed) 
+    : base(name, manufacturer, model, quantity, price)
+    {
+        ReadSpeed = readSpeed;
+        WriteSpeed = writeSpeed;
+    }
+
+    public override void Print()
+    {
+        // Исправление: Используем конкатенацию строк с оператором +
+        Console.WriteLine("Name: " + Name + ", Manufacturer: " + Manufacturer + ", Model: " + Model + ", Read Speed: " + ReadSpeed + "x, Write Speed: " + WriteSpeed + "x, Quantity: " + Quantity + ", Price: " + Price);
+    } 
+
+    public override void LoadFile()
+    {
+        System.Console.WriteLine("Loading DVD data from file...");
+    }
+
+    public override void SaveFile()
+    {
+        System.Console.WriteLine("Saving DVD data to file...");
+    }
+    
+    public override string ToString()
+    {
+        return base.ToString() + "Read Speed: " + ReadSpeed + "Write Speed: " + WriteSpeed;
+    }
+}
 
 class Program
 {
+    static List<Storage> storages= new List<Storage>();
+
+    static void PrintStorages()
+    {
+        foreach(var storage in storages)
+        {
+            storage.Print();
+        }
+    }
+
+    static void SearchByName(string name)
+    {
+        foreach (var storage in storages)
+        {
+            if (storage.Name == name)
+            {
+                storage.Print();
+            }
+        }
+    }
+
+    static void RemoveByModel(string name)
+    {
+        storages.RemoveAll(storage => storage.Model == name);
+    }
+
+    static void AddStorage(Storage storage)
+    {
+        storages.Add(storage);
+    }
+
     static void Main(string[] args)
     {
         Console.Clear();
-        Student s = new Student();
-        Student s2 = new Student();
-        Student s3 = new Student();
-        Group g = new Group();
-        Group g2 = new Group();
+        Flash flash = new Flash("USB Flash Drive", "SanDisk", "Ultra", 10, 1200, 64, 100);
 
-        s.AddExam(12);
-        s2.AddExam(6);
-        s3.AddExam(7);
+        DVD dvd = new DVD("DVD-R", "Sony", "Premium", 50, 25, 16, 8);
 
-        if(s)
-        {
-            System.Console.WriteLine("true");
-        }
+        HDD hdd = new HDD("External HDD", "Seagate", "Expansion", 5, 4500, 2000, 120);
 
-        else
-        {
-            System.Console.WriteLine("false");
-        }
+        AddStorage(flash);
+        AddStorage(hdd);
+        AddStorage(dvd);
 
-        if(s > s2)
-        {
-            System.Console.WriteLine("true");
-        }
+        PrintStorages();
 
-        if(s2 < s)
-        {
-            System.Console.WriteLine("true");
-        }
+        SearchByName("USB Flash Drive");
 
-        if(s == s2)
-        {
-            System.Console.WriteLine("true");
-        }
+        RemoveByModel("Expansion");
 
-        if(s != s2)
-        {
-            System.Console.WriteLine("true");
-        }
-
-        g.AddStudent(s);
-        g.AddStudent(s2);
-        g.AddStudent(s3);
-
-        g2.AddStudent(s);
-        g2.AddStudent(s2);
-        g2.AddStudent(s3);
-
-        
-        if(g == g2)
-        {
-            System.Console.WriteLine("true");
-        }
-        else
-        {
-            System.Console.WriteLine("false");
-        }
-
-        // g.ExpelBadStudent();
-        // g.ShowGroup();
-        // Group copy = new Group();
-        
-        // g.ShowGroup();
-        // g.TransferStudent(s, copy);
-        // g.ShowGroup();
-        // copy.ShowGroup();
-        System.Console.WriteLine("test");
+        PrintStorages();
     }
 }

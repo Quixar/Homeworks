@@ -73,5 +73,6 @@ class Program
         // g.TransferStudent(s, copy);
         // g.ShowGroup();
         // copy.ShowGroup();
+        System.Console.WriteLine("test");
     }
 }

@@ -10,6 +10,7 @@ class Program
         Student s = new Student();
         Student s2 = (Student)s.Clone();
         Student s3 = new Student();
+        Student s4 = new Student();
 
         s.AddExam(7);
         s2.AddExam(8);
@@ -32,7 +33,9 @@ class Program
         g.AddStudent(s);
         g.AddStudent(s2);
         g.AddStudent(s3);
-        // Group g2 = new Group();
+        Group g2 = (Group)g.Clone();
+        g2.ShowGroup();
+
 
         // s.AddExam(12);
         // s2.AddExam(6);

@@ -1,7 +1,7 @@
 using System;
 namespace student
 {
-    class Group
+    class Group : ICloneable, IComparable<Group>
     {
         List<Student> students;
         string groupName;
@@ -126,6 +126,18 @@ namespace student
         public static bool operator !=(Group left, Group right)
         {
             return !(left == right);
+        }
+
+        public object Clone()
+        {
+            return new Group(this);
+        }
+
+        public int CompareTo(Group? obj)
+        {
+            if(this.students.Count > obj?.students.Count) return -1;
+            if(this.students.Count > obj?.students.Count) return 1;
+            return 0;
         }
     }
 }

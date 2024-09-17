@@ -2,100 +2,93 @@
 
 namespace student;
 
+enum TaxType
+{
+    None,
+    VAT10,
+    VAT20
+}
+
+struct Product
+{
+    public string Name;
+    public int Quantity;
+    public double Price;
+    public double Discount;
+
+    public Product(string name, int quantity, double price, double discount)
+    {
+        Name = name;
+        Quantity = quantity;
+        Price = price;
+        Discount = discount;
+    }
+
+    public double ProductPrice()
+    {
+        return (Price * Quantity) - Discount;
+    }
+}
+
+struct Receipt
+{
+    public string StoreName;
+    public string Address;
+    public DateTime Date;
+    public TaxType Tax;
+    public List<Product> Products;
+
+    public Receipt(string storeName, string address, TaxType tax)
+    {
+        StoreName = storeName;
+        Address = address;
+        Date = DateTime.Now;
+        Tax = tax;
+        Products = new List<Product>();
+    }
+
+    public void AddProduct(Product product)
+    {
+        Products.Add(product);
+    }
+
+    public double TotalPrice()
+    {
+        double total = 0;
+        foreach (Product product in Products)
+        {
+            total += product.ProductPrice();
+        }
+        return total;
+    }
+
+    public void Print()
+    {
+        System.Console.WriteLine("Shop: " + StoreName);
+        System.Console.WriteLine("Address: " + Address);
+        System.Console.WriteLine("Date: " + Date);
+        System.Console.WriteLine("------------------------------------");
+
+        foreach(Product product in Products)
+        {
+            System.Console.WriteLine(product.Name + "        " + product.Quantity + " X " + product.Price);
+        }
+        System.Console.WriteLine("------------------------------------");
+        System.Console.WriteLine("Total: " + TotalPrice());
+        System.Console.WriteLine("------------------------------------");
+        System.Console.WriteLine(Tax);
+    }
+}
+
 class Program
 {
     static void Main(string[] args)
     {
         Console.Clear();
-        Student s = new Student();
-        Student s2 = (Student)s.Clone();
-        Student s3 = new Student();
-        Student s4 = new Student();
-
-        s.AddExam(7);
-        s2.AddExam(8);
-        s3.AddExam(6);
-
-        List<Student> a = new List<Student>();
-
-        a.Add(s);
-        a.Add(s2);
-        a.Add(s3);
-        a.Sort();
-
-        foreach (Student stud in a)
-        {
-            stud.Show();
-        }
-
-        Group g = new Group();
-
-        g.AddStudent(s);
-        g.AddStudent(s2);
-        g.AddStudent(s3);
-        Group g2 = (Group)g.Clone();
-        g2.ShowGroup();
-
-
-        // s.AddExam(12);
-        // s2.AddExam(6);
-        // s3.AddExam(7);
-
-        // if(s)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // else
-        // {
-        //     System.Console.WriteLine("false");
-        // }
-
-        // if(s > s2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // if(s2 < s)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // if(s == s2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // if(s != s2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // g.AddStudent(s);
-        // g.AddStudent(s2);
-        // g.AddStudent(s3);
-
-        // g2.AddStudent(s);
-        // g2.AddStudent(s2);
-        // g2.AddStudent(s3);
-
-        
-        // if(g == g2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-        // else
-        // {
-        //     System.Console.WriteLine("false");
-        // }
-
-        // g.ExpelBadStudent();
-        // g.ShowGroup();
-        // Group copy = new Group();
-        
-        // g.ShowGroup();
-        // g.TransferStudent(s, copy);
-        // g.ShowGroup();
-        // copy.ShowGroup();System.Console.WriteLine("test");
+        Receipt r = new Receipt("Aushan", "address", TaxType.VAT10);
+        r.AddProduct(new Product("Apple", 2, 50.00, 10.00));
+        r.AddProduct(new Product("Bread", 1, 60.00, 0));
+        r.AddProduct(new Product("Egg", 3, 30.00, 5.00));
+        r.Print();
     }
 }

@@ -96,6 +96,6 @@ class Program
         // g.ShowGroup();
         // g.TransferStudent(s, copy);
         // g.ShowGroup();
-        // copy.ShowGroup();
+        // copy.ShowGroup();System.Console.WriteLine("test");
     }
 }

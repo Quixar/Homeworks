@@ -1,7 +1,7 @@
 using System;
 namespace student
 {
-    class Student : ICloneable
+    class Student : ICloneable, IComparable<Student>
     {
         string name;
         string surname;
@@ -164,11 +164,6 @@ namespace student
             return exams.Average();
         }
 
-        public object Clone()
-        {
-            return new Student(this);
-        }
-
         public static bool operator true(Student student)
         {
             return !student.expel;
@@ -209,6 +204,18 @@ namespace student
                 return true;
             }
             return false;
+        }
+
+        public object Clone()
+        {
+            return new Student(this);
+        }
+
+        public int CompareTo(Student? obj)
+        {
+            if(this.CalculateAvg() > obj?.CalculateAvg()) return -1;
+            if(this.CalculateAvg() < obj?.CalculateAvg()) return 1;
+            return 0;
         }
     }
 }

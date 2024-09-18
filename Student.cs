@@ -1,8 +1,25 @@
 using System;
 namespace student
 {
-    class Student : ICloneable, IComparable<Student>
+    class Student : ICloneable//, IComparable<Student>
     {
+        public class AvgComparer : IComparer<Student>
+        {
+            public int Compare(Student? x, Student? y)
+            {
+                if(x.CalculateAvg() > y?.CalculateAvg()) return -1;
+                if(x.CalculateAvg() < y?.CalculateAvg()) return 1;
+                return 0;
+            }
+        }
+
+        public class NameComparer : IComparer<Student>
+        {
+            public int Compare(Student? x, Student? y)
+            {
+                return x.name.CompareTo(y.name);
+            }
+        }
         string name;
         string surname;
         string middlename;
@@ -211,11 +228,16 @@ namespace student
             return new Student(this);
         }
 
-        public int CompareTo(Student? obj)
+        public override string ToString()
         {
-            if(this.CalculateAvg() > obj?.CalculateAvg()) return -1;
-            if(this.CalculateAvg() < obj?.CalculateAvg()) return 1;
-            return 0;
+            return this.surname + "\n" + this.name + "\n" + this.middlename + "\n" + this.address + "\n" + this.phone + "\n" + this.birthday + "\nHomework grades: " + string.Join(", ", homeworks) + "\nCoursework grades: " + string.Join(", ", courseworks) + "\nExam grades: " + string.Join(", ", exams);
         }
+
+        // public int CompareTo(Student? obj)
+        // {
+        //     if(this.CalculateAvg() > obj?.CalculateAvg()) return -1;
+        //     if(this.CalculateAvg() < obj?.CalculateAvg()) return 1;
+        //     return 0;
+        // }
     }
 }

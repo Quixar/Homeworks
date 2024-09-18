@@ -1,7 +1,8 @@
 using System;
+using System.Collections;
 namespace student
 {
-    class Group : ICloneable, IComparable<Group>
+    class Group : ICloneable, IComparable<Group>, IEnumerable<Student>
     {
         List<Student> students;
         string groupName;
@@ -138,6 +139,30 @@ namespace student
             if(this.students.Count > obj?.students.Count) return -1;
             if(this.students.Count > obj?.students.Count) return 1;
             return 0;
+        }
+
+        public Student this[int index]
+        {
+            get
+            {
+                if(index >= students.Count)
+                {
+                    throw new ArgumentOutOfRangeException("index");
+                }
+                else
+                {
+                    return students[index];
+                }
+            }
+        }
+
+        public IEnumerator<Student> GetEnumerator() => new GroupEnumerator(students);
+
+        IEnumerator<Student> IEnumerable<Student>.GetEnumerator() => GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -16,26 +16,16 @@ class Program
         s2.AddExam(8);
         s3.AddExam(6);
 
-        List<Student> a = new List<Student>();
-
-        a.Add(s);
-        a.Add(s2);
-        a.Add(s3);
-        a.Sort();
-
-        foreach (Student stud in a)
-        {
-            stud.Show();
-        }
-
         Group g = new Group();
 
         g.AddStudent(s);
         g.AddStudent(s2);
         g.AddStudent(s3);
-        Group g2 = (Group)g.Clone();
-        g2.ShowGroup();
-
+        
+        foreach(var student in g)
+        {
+            System.Console.WriteLine(student);
+        }
 
         // s.AddExam(12);
         // s2.AddExam(6);
@@ -97,5 +87,17 @@ class Program
         // g.TransferStudent(s, copy);
         // g.ShowGroup();
         // copy.ShowGroup();
+
+         // List<Student> a = new List<Student>();
+
+        // a.Add(s);
+        // a.Add(s2);
+        // a.Add(s3);
+        // a.Sort();
+
+        // foreach (Student stud in a)
+        // {
+        //     stud.Show();
+        // }
     }
 }

@@ -6,11 +6,13 @@ class AuthDataCollection
 {
     private List<string> logins;
     private List<string> passwords;
+    private List<string> keys;
 
     public AuthDataCollection()
     {
         logins = new List<string>();
         passwords = new List<string>();
+        keys = new List<string>();
     }
 
     public int Count
@@ -36,9 +38,14 @@ class AuthDataCollection
         {
             throw new ArgumentException("This login already exist");
         }
+
+        string key = GenerateKey();
+        keys.Add(key);
+        string encryptedPassword = Encrypt(password, key);
+
         logins.Add(login);
-        passwords.Add(password);
-        System.Console.WriteLine("User: " + login + " added");
+        passwords.Add(encryptedPassword);
+        System.Console.WriteLine("User was added");
     }
 
     public void DeleteUser(string login)
@@ -48,7 +55,8 @@ class AuthDataCollection
             int index = logins.IndexOf(login);
             logins.RemoveAt(index);
             passwords.RemoveAt(index);
-            System.Console.WriteLine("User: " + login + " removed");
+            keys.RemoveAt(index);
+            System.Console.WriteLine("User was removed");
         }
         else{
             throw new ArgumentException("User not found");
@@ -77,10 +85,22 @@ class AuthDataCollection
             }
             else if (choice == "2")
             {
+                Console.Write("Enter old password: ");
+                string? oldPassword = Console.ReadLine();
+                string decryptedOldPassword = Decrypt(passwords[index], keys[index]);
+
+                if (oldPassword != decryptedOldPassword)
+                {
+                    throw new Exception("Old password is incorrect");
+                }
                 System.Console.Write("Set new password: ");
                 string? newPassword = Console.ReadLine();
-                passwords[index] = newPassword;
+                passwords[index] = Encrypt(newPassword, keys[index]);
                 System.Console.WriteLine("Users data was successfully updated");
+            }
+            else
+            {
+                throw new Exception("Invalid input");
             }
         }
         else
@@ -96,6 +116,44 @@ class AuthDataCollection
             System.Console.WriteLine(login);
         }
     }
+
+    private string GetRepeatKey(string s, int n)
+    {
+        var r = s;
+        while(r.Length < n)
+        {
+            r += r;
+        }
+        return r.Substring(0, n);
+    }
+
+    private string Cipher(string password, string secretKey)
+    {
+        var currentKey = GetRepeatKey(secretKey, password.Length);
+        var result = string.Empty;
+        for(int i = 0; i < password.Length; i++)
+        {
+            result += ((char)(password[i] ^ currentKey[i])).ToString();
+        }
+        return result;
+    }
+
+    private string Encrypt(string password, string key) => Cipher(password, key);
+    private string Decrypt(string encryptedPassword, string key) => Cipher(encryptedPassword, key);
+
+    private string GenerateKey()
+    {
+        const string symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        int length = random.Next(8, 20);
+        var key = new char[length];
+
+        for(int i = 0; i < length; i++)
+        {
+            key[i] = symbols[random.Next(symbols.Length)];
+        }
+        return new string(key);
+    }   
 }
 
 class Program

@@ -2,102 +2,62 @@
 
 namespace student;
 
+delegate void Choice(int index);
+
 class Program
 {
+    static void NewGame(int index)
+    {
+        System.Console.WriteLine("New game was started");
+    }
+
+    static void LoadGame(int index)
+    {
+        System.Console.WriteLine("Game was loaded");
+    }
+
+    static void Rules(int index)
+    {
+        System.Console.WriteLine("Some rules");
+    }
+
+    static void Author(int index)
+    {
+        System.Console.WriteLine("Author good boy");
+    }
+
+    static void Exit(int index)
+    {
+        System.Console.WriteLine("bye bye ");
+    }
+
     static void Main(string[] args)
     {
         Console.Clear();
-        Student s = new Student();
-        Student s2 = (Student)s.Clone();
-        Student s3 = new Student();
-        Student s4 = new Student();
-
-        s.AddExam(7);
-        s2.AddExam(8);
-        s3.AddExam(6);
-
-        Group g = new Group();
-
-        g.AddStudent(s);
-        g.AddStudent(s2);
-        g.AddStudent(s3);
-        
-        foreach(var student in g)
+        Choice c = null;
+        System.Console.WriteLine("1 - New game\n2 - Load game\n3 - Rules\n4 - About author\n0 - Exit");
+        System.Console.Write("Make your choice: ");
+        int choice = Convert.ToInt32(Console.ReadLine());
+        if(choice == 1)
         {
-            System.Console.WriteLine(student);
+            c += NewGame;
         }
-
-        // s.AddExam(12);
-        // s2.AddExam(6);
-        // s3.AddExam(7);
-
-        // if(s)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // else
-        // {
-        //     System.Console.WriteLine("false");
-        // }
-
-        // if(s > s2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // if(s2 < s)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // if(s == s2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // if(s != s2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-
-        // g.AddStudent(s);
-        // g.AddStudent(s2);
-        // g.AddStudent(s3);
-
-        // g2.AddStudent(s);
-        // g2.AddStudent(s2);
-        // g2.AddStudent(s3);
-
-        
-        // if(g == g2)
-        // {
-        //     System.Console.WriteLine("true");
-        // }
-        // else
-        // {
-        //     System.Console.WriteLine("false");
-        // }
-
-        // g.ExpelBadStudent();
-        // g.ShowGroup();
-        // Group copy = new Group();
-        
-        // g.ShowGroup();
-        // g.TransferStudent(s, copy);
-        // g.ShowGroup();
-        // copy.ShowGroup();
-
-         // List<Student> a = new List<Student>();
-
-        // a.Add(s);
-        // a.Add(s2);
-        // a.Add(s3);
-        // a.Sort();
-
-        // foreach (Student stud in a)
-        // {
-        //     stud.Show();
-        // }
+        else if(choice == 2)
+        {
+            c += LoadGame;
+        }
+        else if (choice == 3)
+        {
+            c += Rules;
+        }
+        else if (choice == 4)
+        {
+            c += Author;
+        }
+        else
+        {
+            c += Exit;
+        }
+        c(choice);
     }
 }

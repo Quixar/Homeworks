@@ -78,10 +78,16 @@ class Program
 
     static void ShowAllLibrary(Dictionary<string, List<string>> library)
     {
-        foreach( var elem in library)
-        {
-            Console.WriteLine($"Author: {elem.Key}, Books: {string.Join(", ", elem.Value)}");
-        }
+        if (library.Count == 0)
+    {
+        Console.WriteLine("The library is empty.");
+        return;
+    }
+
+    foreach (var elem in library)
+    {
+        Console.WriteLine($"Author: {elem.Key}, Books: {string.Join(", ", elem.Value)}");
+    }
     }
 
     public delegate void Choice(Dictionary<string, List<string>> library);
@@ -95,7 +101,6 @@ class Program
 
         while(true)
         {
-            //Console.Clear();
             Console.WriteLine("1. Add a book");
             Console.WriteLine("2. Remove a book");
             Console.WriteLine("3. Search for a book");

@@ -122,7 +122,7 @@ class Program
             {
                 choice = ShowAllBookOfAuthor;
             }
-            else if (userChoice == "6")
+            else if (userChoice == "5")
             {
                 choice = ShowAllLibrary;
             }

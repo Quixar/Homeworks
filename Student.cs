@@ -3,6 +3,8 @@ namespace student
 {
     class Student : ICloneable//, IComparable<Student>
     {
+        public delegate void EventHandler(Student student, EventArgs e);
+        public event EventHandler? PassedSesion;
         public class AvgComparer : IComparer<Student>
         {
             public int Compare(Student? x, Student? y)
@@ -172,6 +174,10 @@ namespace student
                 {
                     return false;
                 }
+            }
+            if(PassedSesion != null)
+            {
+                PassedSesion(this, EventArgs.Empty);
             }
             return true;
         }

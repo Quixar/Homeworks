@@ -7,8 +7,8 @@ internal class Program
         try
         {
             string app = "terminal";
-
             Process process = new Process();
+            
             process.StartInfo.FileName = "open";
             process.StartInfo.Arguments = $"-a {app}";
 

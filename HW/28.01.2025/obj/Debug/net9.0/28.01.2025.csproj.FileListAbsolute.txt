@@ -1,0 +1,15 @@
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/bin/Debug/net9.0/28.01.2025
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/bin/Debug/net9.0/28.01.2025.deps.json
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/bin/Debug/net9.0/28.01.2025.runtimeconfig.json
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/bin/Debug/net9.0/28.01.2025.dll
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/bin/Debug/net9.0/28.01.2025.pdb
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.AssemblyInfoInputs.cache
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.AssemblyInfo.cs
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.csproj.CoreCompileInputs.cache
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.sourcelink.json
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.dll
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/refint/28.01.2025.dll
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.pdb
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/28.01.2025.genruntimeconfig.cache
+/Users/quixar/vscode/IT_STEP/Multithreading/HW/28.01.2025/obj/Debug/net9.0/ref/28.01.2025.dll

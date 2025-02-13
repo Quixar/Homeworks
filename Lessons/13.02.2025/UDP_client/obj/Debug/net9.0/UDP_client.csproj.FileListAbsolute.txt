@@ -1,0 +1,14 @@
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/bin/Debug/net9.0/UDP_client
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/bin/Debug/net9.0/UDP_client.deps.json
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/bin/Debug/net9.0/UDP_client.runtimeconfig.json
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/bin/Debug/net9.0/UDP_client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/bin/Debug/net9.0/UDP_client.pdb
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.AssemblyInfoInputs.cache
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.AssemblyInfo.cs
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.csproj.CoreCompileInputs.cache
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/refint/UDP_client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.pdb
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/UDP_client.genruntimeconfig.cache
+/Users/quixar/vscode/IT_STEP/Network_programing/Lessons/13.02.2025/UDP_client/obj/Debug/net9.0/ref/UDP_client.dll

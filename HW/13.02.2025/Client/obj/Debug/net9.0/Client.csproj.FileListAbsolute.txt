@@ -1,0 +1,14 @@
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/bin/Debug/net9.0/Client
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/bin/Debug/net9.0/Client.deps.json
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/bin/Debug/net9.0/Client.runtimeconfig.json
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/bin/Debug/net9.0/Client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/bin/Debug/net9.0/Client.pdb
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.AssemblyInfoInputs.cache
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.AssemblyInfo.cs
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.csproj.CoreCompileInputs.cache
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/refint/Client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.pdb
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.genruntimeconfig.cache
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/ref/Client.dll

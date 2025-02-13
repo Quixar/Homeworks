@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("UDPServer")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a310de596ab2ae1cba57417ca9c85256e027dbb")]
-[assembly: System.Reflection.AssemblyProductAttribute("UDPServer")]
-[assembly: System.Reflection.AssemblyTitleAttribute("UDPServer")]
+[assembly: System.Reflection.AssemblyProductAttribute("Server")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

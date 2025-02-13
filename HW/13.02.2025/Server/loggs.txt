@@ -1,0 +1,17 @@
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 14.02.2025 00:52:45
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 14.02.2025 00:52:56
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 14.02.2025 00:53:18
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server has finished working
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 14.02.2025 01:10:47
+Client 127.0.0.1: usd uero
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 14.02.2025 01:10:54
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server has finished working

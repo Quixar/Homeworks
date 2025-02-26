@@ -1,0 +1,59 @@
+Server started. Waiting for connections...
+Client connected: 127.0.0.1:52245
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Client connected: 127.0.0.1:52248
+Client 127.0.0.1 exceeded request limit. Blocking.
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Client connected: 127.0.0.1:52249
+Client 127.0.0.1 exceeded request limit. Blocking.
+Server started. Waiting for connections...
+Client connected: 127.0.0.1:52250
+Client connected: 127.0.0.1:52251
+Received request from 127.0.0.1: euro usd
+Sent response to 127.0.0.1: EURO to USD: 1,18
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Received request from 127.0.0.1: exit
+Sent response to 127.0.0.1: Goodbye!
+Client 127.0.0.1 disconnected
+Client connected: 127.0.0.1:52252
+Client connected: 127.0.0.1:52255
+Client connected: 127.0.0.1:52256
+Client connected: 127.0.0.1:52257
+ing new connections.
+Server is at full capacity. Rejecting new connections.
+Server is at full capacity. Rejecting new connections.
+Server is at full capacity. Rejecting new connections.
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Server is at full capacity. Rejecting new connections.
+Server is at full capacity. Rejecting new connections.
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Server is at full capacity. Rejecting new connections.
+Received request from 127.0.0.1: usd euro
+Sent response to 127.0.0.1: USD to EURO: 0,8474576271186441
+Server is at full capacity. Rejecting new connections.
+Server is at full capacity. Rejecting new connections.

@@ -1,0 +1,114 @@
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 14.02.2025 00:52:45
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 14.02.2025 00:52:56
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 14.02.2025 00:53:18
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server has finished working
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 14.02.2025 01:10:47
+Client 127.0.0.1: usd uero
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 14.02.2025 01:10:54
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server has finished working
+Server is waiting for connections...
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 14.02.2025 18:50:40
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 14.02.2025 18:50:48
+Client 127.0.0.1 disconnected.
+Server has finished working
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 16.02.2025 19:55:22
+Client 127.0.0.1: uero usd
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:31
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:41
+Client 127.0.0.1: usd uero
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:48
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:54
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server has finished working
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 19:45:24
+Client 127.0.0.1 disconnected.
+Waiting for 48,860601 seconds before accepting new connections.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 19:46:23
+Maximum number of requests reached. Please try again in one minute.
+Waiting for 59,999481 seconds before accepting new connections.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 19:54:26
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 19:54:47
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 24.02.2025 19:54:58
+Client 127.0.0.1 disconnected.
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 19:55:09
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 24.02.2025 19:55:13
+Client 127.0.0.1: clear
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 24.02.2025 19:55:15
+Client 127.0.0.1 disconnected.
+Client 127.0.0.1: exit 
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 24.02.2025 19:55:18
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:00:55
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:00:58
+Client 127.0.0.1 disconnected.
+Client 127.0.0.1 disconnected.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:07:18
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 24.02.2025 20:07:22
+Client 127.0.0.1: euro usd
+Client 127.0.0.1 reached request limit.
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:08:12
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 24.02.2025 20:08:16
+Client 127.0.0.1: usd euro
+Client 127.0.0.1 reached request limit.
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:08:40
+Client 127.0.0.1 disconnected.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:09:43
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 24.02.2025 20:09:46
+Client 127.0.0.1: euro usd
+Client 127.0.0.1 reached request limit.
+Client 127.0.0.1 disconnected.
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:09:59
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 24.02.2025 20:10:04
+Client 127.0.0.1: usd euro
+Client 127.0.0.1 reached request limit.
+Client 127.0.0.1 disconnected.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:11:09
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 24.02.2025 20:11:15
+Client 127.0.0.1: usd euro
+Client 127.0.0.1 reached request limit.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:12:41
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 24.02.2025 20:12:45
+Client 127.0.0.1: usd euro
+Client 127.0.0.1 reached request limit.
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 24.02.2025 20:15:39
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 24.02.2025 20:15:44
+Client 127.0.0.1: usd euro
+Client 127.0.0.1 reached request limit.

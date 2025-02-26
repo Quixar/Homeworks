@@ -12,3 +12,4 @@
 /Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.pdb
 /Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.genruntimeconfig.cache
 /Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/ref/Client.dll
+/Users/quixar/vscode/IT_STEP/Network_programing/HW/13.02.2025/Client/obj/Debug/net9.0/Client.sourcelink.json

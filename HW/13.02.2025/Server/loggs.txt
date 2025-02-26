@@ -15,3 +15,25 @@ Server sent message to 127.0.0.1 at 14.02.2025 01:10:54
 Client 127.0.0.1: exit
 Client 127.0.0.1 disconnected.
 Server has finished working
+Server is waiting for connections...
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 14.02.2025 18:50:40
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 14.02.2025 18:50:48
+Client 127.0.0.1 disconnected.
+Server has finished working
+Server is waiting for connections...
+Client connected to server. IP: 127.0.0.1, Time: 16.02.2025 19:55:22
+Client 127.0.0.1: uero usd
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:31
+Client 127.0.0.1: euro usd
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:41
+Client 127.0.0.1: usd uero
+Data was entered incorrectly
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:48
+Client 127.0.0.1: usd euro
+Server sent message to 127.0.0.1 at 16.02.2025 19:55:54
+Client 127.0.0.1: exit
+Client 127.0.0.1 disconnected.
+Server has finished working

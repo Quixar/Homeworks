@@ -13,7 +13,7 @@ internal class Server
     static void Main(string[] args)
     {
         Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        Socket clientSocket = null;
+        Socket? clientSocket = null;
 
         try
         {

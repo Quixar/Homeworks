@@ -34,3 +34,4 @@
 /Users/quixar/ITSTEP/ADO.NET/HW/13.03.2025/13.03.2025/obj/Debug/net9.0/13.03.2025.pdb
 /Users/quixar/ITSTEP/ADO.NET/HW/13.03.2025/13.03.2025/obj/Debug/net9.0/13.03.2025.genruntimeconfig.cache
 /Users/quixar/ITSTEP/ADO.NET/HW/13.03.2025/13.03.2025/obj/Debug/net9.0/ref/13.03.2025.dll
+/Users/quixar/ITSTEP/ADO.NET/HW/13.03.2025/13.03.2025/obj/Debug/net9.0/13.03.2025.sourcelink.json

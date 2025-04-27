@@ -6,12 +6,10 @@ internal class Program
     {
         MySqlConnection connection =
             new MySqlConnection("server=localhost;port=3306;database=CoffeeShop;uid=root;password=INnoVation");
-
         try
         {
             connection.Open();
-            Console.WriteLine("Successfully connected to the CoffeeShop database.");
-            Console.WriteLine($"Server version: {connection.ServerVersion}");
+            Console.WriteLine("Successfully connected to database.");
             Console.WriteLine($"Database: {connection.Database}");
 
             bool exit = false;

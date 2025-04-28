@@ -22,15 +22,15 @@ public class DataContex : DbContext
     {
         modelBuilder.Entity<Entities.UserAccess>()
             .HasKey(ua => new { ua.UserId, ua.RoleId });
-        
+    
         modelBuilder.Entity<Entities.UserAccess>()
             .HasOne(ua => ua.User)
             .WithMany(u => u.UserAccesses)
             .HasForeignKey(ua => ua.UserId);
-        
+    
         modelBuilder.Entity<Entities.UserAccess>()
-            .HasOne(ua => ua.Role)
-            .WithMany()
+            .HasOne(ua => ua.UserRole)
+            .WithMany(ur => ur.UserAccesses)
             .HasForeignKey(ua => ua.RoleId);
     }
 }

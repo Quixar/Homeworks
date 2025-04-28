@@ -112,3 +112,4 @@
 /Users/quixar/ITSTEP/ADO.NET/HW/project/obj/Debug/net9.0/project.pdb
 /Users/quixar/ITSTEP/ADO.NET/HW/project/obj/Debug/net9.0/project.genruntimeconfig.cache
 /Users/quixar/ITSTEP/ADO.NET/HW/project/obj/Debug/net9.0/ref/project.dll
+/Users/quixar/ITSTEP/ADO.NET/HW/project/obj/Debug/net9.0/project.sourcelink.json

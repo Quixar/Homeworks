@@ -10,29 +10,40 @@ class Program
     
     static void Main(string[] args)
     {
-        var userCount  = _context.Users.Count();
-        
-        if (userCount == 0)
-        {
-            var user = new User
-            {
-                Id = Guid.NewGuid(),
-                Name = "Test Test",
-                Email = "test@test.com",
-                Birthdate = new DateTime(2006, 07, 17),
-                RegisteredAt = DateTime.Now
-            };
-            _context.Users.Add(user);
-            _context.SaveChanges();
-            Console.WriteLine("User was created.");
-        }
-        else
-        {
-            var query = _context.Users.Where(u => u.Birthdate <= DateTime.Now);
-            Console.WriteLine($"Table has {query.Count()} users");
-        }
+        var userService = new UserService(_context);
 
-        Console.WriteLine("Press any key to continue...");
-        Console.ReadKey();
+        while (true)
+        {
+            Console.WriteLine("\nChoose action:");
+            Console.WriteLine("1 - Create new user");
+            Console.WriteLine("2 - Show oldest user");
+            Console.WriteLine("3 - Show last three registered users");
+            Console.WriteLine("4 - Show roles with user counts");
+            Console.WriteLine("0 - Exit");
+            Console.Write("Choice: ");
+
+            var choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    userService.CreateUser();
+                    break;
+                case "2":
+                    userService.PrintOldestUser();
+                    break;
+                case "3":
+                    userService.PrintLastThreeRegisteredUsers();
+                    break;
+                case "4":
+                    userService.ShowRoleStatistics();
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Try again.");
+                    break;
+            }
+        }
     }
 }

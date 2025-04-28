@@ -8,4 +8,6 @@ public class UserRole
     public Boolean CanRead     { get; set; }
     public Boolean CanUpdate   { get; set; }
     public Boolean CanDelete   { get; set; }
+    
+    public List<UserAccess> UserAccesses { get; set; } = [];
 }

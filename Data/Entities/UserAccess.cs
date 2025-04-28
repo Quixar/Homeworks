@@ -7,5 +7,5 @@ public class UserAccess
     public string RoleId { get; set; } = null!;
     
     public User User { get; set; } = null!;
-    public UserRole Role { get; set; } = null!;
+    public UserRole UserRole { get; set; } = null!;
 }

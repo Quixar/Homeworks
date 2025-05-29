@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const year = 2025;
+        name = prompt("Enter your name:");
+        alert(`Hi ${name}`);    
+        birtday = prompt("Enter you birth year");
+        alert(`Your age is ${year - birtday}`);
+        a = prompt("Enter length of side of square");
+        alert(`Perimeter of square is ${4 * a}`);
+        r = prompt("Enter raduis of circle");
+        alert(`Circle area is ${Math.PI * r ** 2}`);
+        dis = prompt("Enter distance between to places");
+        time = prompt("Enter time you want to reach distination");
+        alert(`You need to travel at speed of ${dis / time} km/h`);
+        const exchangeRate = 0.92;
+        dollars = prompt("Enter amount in USD:");
+        alert(`You will get ${dollars * exchangeRate} EUR`);
+        flashSizeGB = prompt("Enter flash drive size in GB:");
+        const fileSizeMB = 820;
+        flashSizeMB = flashSizeGB * 1024;
+        alert(`You can store ${Math.floor(flashSizeMB / fileSizeMB)} files of 820 MB on the flash drive`);
+        wallet = prompt("Enter amount of money you have:");
+        chocolatePrice = prompt("Enter price of one chocolate:");
+        chocoCount = Math.floor(wallet / chocolatePrice);
+        change = wallet - chocoCount * chocolatePrice;
+        alert(`You can buy ${chocoCount} chocolates and your change is ${change}`);
+        number = prompt("Enter a three-digit number:");
+        reverse = number % 10 * 100 + Math.floor(number / 10) % 10 * 10 + Math.floor(number / 100);
+        alert(`Reversed number is ${reverse}`);
+        intNum = prompt("Enter an integer number:");
+        alert(intNum % 2 === 0 && "Even" || "Odd");        
+    </script>
+</body>
+</html>
+

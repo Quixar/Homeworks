@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+}
+
+.traffic-light {
+    background: lightgrey;
+    padding: 20px 15px;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #888;
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #444;
+    opacity: 0.3;
+    transition: background 0.3s, opacity 0.3s;
+}
+
+.light.red.active {
+    background: red;
+    opacity: 1;
+}
+.light.yellow.active {
+    background: yellow;
+    opacity: 1;
+}
+.light.green.active {
+    background: green;
+    opacity: 1;
+}

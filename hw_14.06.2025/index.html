@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Асинхронний виклик</title>
+</head>
+<body>
+  <label>
+    Введіть час затримки:
+    <input type="number" id="delay" value="1000" min="0"> мс
+  </label>
+  <br>
+  <label>
+    <input type="radio" name="result" value="success">
+    успіх
+  </label>
+  <label>
+    <input type="radio" name="result" value="error" checked>
+    помилка
+  </label>
+  <br>
+  <button id="start">start</button>
+  <div class="log" id="log"></div>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f5f7;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    max-width: 620px;
+}
+
+.tools-wrapper {
+    background: linear-gradient(135deg, #daeaff, #c6d8f3);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.tools-panel {
+    background-color: #ffffff;
+    border-radius: 48px;
+    padding: 17px;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.04);
+}
+
+.tools-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tools-group h4 {
+    margin-bottom: 9px;
+    font-weight: 500;
+}
+
+.tool-buttons,
+.color-swatches {
+    gap: 14px;
+}
+
+.tool-btn,
+.color-swatch {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tool-btn:hover,
+.color-swatch:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+.tool-btn.active,
+.color-swatch.active {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px #0d6efd;
+}
+
+.color-swatch {
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+.board-area {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+#drawingBoard {
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    background-color: #fffef4;
+}
+
+.label-overlay {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.label-left,
+.label-right {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: #800080;
+    padding: 10px;
+}
+
+.label-left {
+    left: 12px;
+}
+
+.label-right {
+    right: 12px;
+}

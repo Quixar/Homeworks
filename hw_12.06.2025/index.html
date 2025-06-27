@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малювання</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-4">
+        <section class="tools-panel bg-light p-3 rounded shadow-sm">
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-auto">
+                    <h5 class="text-secondary text-center">Форми</h5>
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
+                        <button class="btn btn-outline-primary rounded-circle tool-btn" data-tool="square">
+                            <i class="bi bi-square"></i>
+                        </button>
+                        <button class="btn btn-outline-primary rounded-circle tool-btn" data-tool="circle">
+                            <i class="bi bi-circle"></i>
+                        </button>
+                        <button class="btn btn-outline-primary rounded-circle tool-btn" data-tool="diamond">
+                            <i class="bi bi-diamond"></i>
+                        </button>
+                        <button class="btn btn-outline-primary rounded-circle tool-btn" data-tool="triangle">
+                            <i class="bi bi-triangle"></i>
+                        </button>
+                        <button class="btn btn-outline-primary rounded-circle tool-btn" data-tool="house">
+                            <i class="bi bi-house"></i>
+                        </button>
+                        <button class="btn btn-outline-primary rounded-circle tool-btn" data-tool="pen">
+                            <i class="bi bi-pen"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-auto text-center">
+                    <h5 class="text-secondary">Кольори</h5>
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
+                        <span class="color-swatch btn rounded-circle" style="background:black; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:gray; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:yellow; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:red; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:green; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:blue; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:purple; border:2px solid #ccc;"></span>
+                        <span class="color-swatch btn rounded-circle" style="background:pink; border:2px solid #ccc;"></span>
+                    </div>
+                </div>
+                <div class="col-md-auto d-flex align-items-end">
+                    <button id="resetCanvas" class="btn btn-danger rounded-circle" style="width: 50px; height: 50px;">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="drawing-area mt-4 text-center">
+            <canvas id="drawingBoard" width="500" height="400" class="border rounded shadow-sm"></canvas>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

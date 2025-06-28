@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+nav {
+    padding: 0.5em 5em !important;
+}
+
+main {
+    flex:1;
+}
+main h1 {
+    text-align: center;
+}
+footer {
+    background-color: antiquewhite;
+    padding: 0.5em 5em;
+}
+[data-cc] {
+    cursor: pointer;
+    opacity: 0.7;
+}
+[data-cc]:hover {
+    opacity: 1;
+}

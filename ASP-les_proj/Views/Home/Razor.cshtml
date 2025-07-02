@@ -1,0 +1,62 @@
+@model ASP_les_proj.Models.Home.HomeRazorPageModel
+@* Тут ми задаем тип модели, сами данные доступные через Razor-поле @Model *@
+@{
+    ViewData["Title"] = "About Razor";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Про Razor</h1>
+    
+</div>
+
+<p>
+    Razor - технологія (рушій), метою якого є суміщення можливостей мови програмування та розмітки.
+    Основу складає спеціальний символ &commat; який у HMTL замінюється сутністю &amp;commat;
+</p>
+
+<h2>Вирази</h2>
+<p>
+    Вирази - інструкції, що мають результат. У сенсі Razor цей резудьтат підставляється у тому місці, у якому згадується. Синтаксис: &commat;(expresion),
+    наприклад, &commat; = @(2 + 3)
+</p>
+
+<h2>Инструкции (Statements)</h2>
+<p>
+    Инструкции не имеют визуального результата (не выводятся). Задаются при помощи синтаксиса <code>&commat; {Statements}</code>,
+    например <pre>
+    &commat;{
+        int x = 10;
+        var rnd = new Random();
+    }
+</pre>
+</p>
+
+@{
+    int x = 10;
+    var rnd = new Random();
+}
+
+<p>
+    Сокращенная форма выражений: <code>&commat;expression</code> разрещается если в выражении нет расделительных знаков,
+    как то 
+    <code>&commat;x = @x</code>
+    <code>&commat;rnd.Next() = @rnd.Next()</code>, но
+    <code>&commat;x + 1 = @x+1</code>
+</p>
+
+<h2>Инструкции управления (Control statements)</h2>
+<p>
+    Условные и цикличные оператора: &commat;if, &commat;if-else,  &commat;switch, &commat;foreach
+</p>
+
+@for (int i = 0; i < Model.Arr.Length; i += 1)
+{
+    if (i % 2 == 0)
+    {
+        <i>@Model.Arr[i]</i><br />
+    }
+    else
+    {
+        <b>@Model.Arr[i]</b><br />
+    }
+}

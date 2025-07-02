@@ -1,0 +1,68 @@
+#drag-area {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    border: 2px dashed #ccc;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+}
+
+.token {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.token.ghost {
+    pointer-events: none;
+    z-index: 999;
+}
+
+.tomato       { background-color: tomato; }
+.seagreen     { background-color: seagreen; }
+.khaki        { background-color: #c3b091; color: #000; }
+.skyblue      { background-color: skyblue; color: #000; }
+.mediumpurple { background-color: mediumpurple; }
+.coral        { background-color: coral; }
+.hotpink      { background-color: hotpink; }
+.mediumturquoise { background-color: mediumturquoise; }
+
+#zone-a,
+#zone-b {
+    position: absolute;
+    width: 46%;
+    height: 28%;
+    bottom: 15px;
+    border: 2px dotted #aaa;
+    background-color: #fff;
+    overflow-y: auto;
+    padding: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#zone-a {
+    left: 2%;
+}
+
+#zone-b {
+    right: 2%;
+}
+
+.drop-target {
+    transition: background-color 0.2s ease;
+}
+
+.drop-target.active {
+    background-color: rgba(0, 128, 0, 0.05);
+}

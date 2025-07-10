@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ASP_P26.Models.User.UserSignUpPageModel
+@{
     ViewData["Title"] = "Sign Up";
 }
 
@@ -6,63 +7,129 @@
     <h1 class="display-4">Реєстрація користувача</h1>
 </div>
 
-<form action="" method="post" enctype="application/x-www-form-urlencoded">
+@if (Model.FormModel != null)
+{
+    <b>Есть данные формы, @(Model.FormErrors?.Count ?? 0) ошибок</b>
+}
+else
+{
+    <i>Нет данных формы</i>
+}
+
+@{
+    string classAddon = "";
+    string? errorMessage = null;
+}
+
+<form action="/User/Register" method="post" enctype="application/x-www-form-urlencoded">
     <div class="row">
         <div class="col col-sm-12 col-lg-6 col-xxl-4">
             <div class="input-group mb-3">
+                @{
+                    classAddon = Model.FormErrors == null
+                        ? ""
+                        : (Model.FormErrors.ContainsKey("UserName") ? "is-invalid" : "is-valid");
+
+                    Model.FormErrors?.TryGetValue("UserName", out errorMessage);
+                }
                 <span class="input-group-text" id="user-name-addon"><i class="bi bi-person"></i></span>
-                <input name="user-name" type="text" class="form-control" placeholder="Ім'я"
-                       aria-label="Ім'я" aria-describedby="user-name-addon" />
-                <div class="invalid-feedback"></div>
+                <input name="user-name" type="text" class="form-control @classAddon" placeholder="Ім'я"
+                       aria-label="Ім'я" aria-describedby="user-name-addon"/>
+                <div class="invalid-feedback">
+                    @errorMessage
+                </div>
             </div>
         </div>
         <div class="col col-sm-12 col-lg-6 col-xxl-4">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="user-email-addon"><i class="bi bi-envelope-at"></i></span>
-                <input name="user-email" type="email" class="form-control" placeholder="E-mail"
+                @{
+                    classAddon = Model.FormErrors == null
+                        ? ""
+                        : (Model.FormErrors.ContainsKey("UserEmail") ? "is-invalid" : "is-valid");
+
+                    Model.FormErrors?.TryGetValue("UserEmail", out errorMessage);
+                }
+                <span class="input-group-text" id="user-email-addon "><i class="bi bi-envelope-at"></i></span>
+                <input name="user-email" type="email" class="form-control @classAddon" placeholder="E-mail"
                        aria-label="E-mail" aria-describedby="user-email-addon" value="user@i.ua">
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">@errorMessage</div>
             </div>
         </div>
         <div class="col col-sm-12 col-lg-6 col-xxl-4">
             <div class="input-group mb-3">
+                @{
+                    classAddon = Model.FormErrors == null
+                        ? ""
+                        : (Model.FormErrors.ContainsKey("Birthdate") ? "is-invalid" : "is-valid");
+
+                    Model.FormErrors?.TryGetValue("Birthdate", out errorMessage);
+                }
                 <span class="input-group-text" id="birthdate-addon"><i class="bi bi-cake"></i></span>
-                <input name="birthdate" type="text" class="form-control" placeholder="Дата народження"
+                <input name="birthdate" type="text" class="form-control @classAddon" placeholder="Дата народження"
                        aria-label="Дата народження" aria-describedby="birthdate-addon">
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">@errorMessage</div>
             </div>
         </div>
         <div class="col col-sm-12 col-lg-6 col-xxl-4">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="user-login-addon"><i class="bi bi-key"></i></span>
-                <input name="user-login" type="text" class="form-control" placeholder="Логін"
+                @{
+                    classAddon = Model.FormErrors == null
+                        ? ""
+                        : (Model.FormErrors.ContainsKey("UserLogin") ? "is-invalid" : "is-valid");
+
+                    Model.FormErrors?.TryGetValue("UserLogin", out errorMessage);
+                }
+                <span class="input-group-text" id="user-login-addon "><i class="bi bi-key"></i></span>
+                <input name="user-login" type="text" class="form-control @classAddon" placeholder="Логін"
                        aria-label="Логін" aria-describedby="user-login-addon">
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">@errorMessage</div>
             </div>
         </div>
         <div class="col col-sm-12 col-lg-6 col-xxl-4">
             <div class="input-group mb-3">
+                @{
+                    classAddon = Model.FormErrors == null
+                        ? ""
+                        : (Model.FormErrors.ContainsKey("UserPassword") ? "is-invalid" : "is-valid");
+
+                    Model.FormErrors?.TryGetValue("UserPassword", out errorMessage);
+                }
                 <span class="input-group-text" id="user-password-addon"><i class="bi bi-lock"></i></span>
-                <input name="user-password" type="text" class="form-control" placeholder="Пароль"
+                <input name="user-password" type="text" class="form-control @classAddon" placeholder="Пароль"
                        aria-label="Пароль" aria-describedby="user-password-addon">
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">@errorMessage</div>
             </div>
         </div>
         <div class="col col-sm-12 col-lg-6 col-xxl-4">
             <div class="input-group mb-3">
+                @{
+                    classAddon = Model.FormErrors == null
+                        ? ""
+                        : (Model.FormErrors.ContainsKey("UserRepeat") ? "is-invalid" : "is-valid");
+
+                    Model.FormErrors?.TryGetValue("UserRepeat", out errorMessage);
+                }
                 <span class="input-group-text" id="user-repeat-addon"><i class="bi bi-unlock"></i></span>
-                <input name="user-repeat" type="text" class="form-control" placeholder="Повтор"
+                <input name="user-repeat" type="text" class="form-control @classAddon" placeholder="Повтор"
                        aria-label="Повтор" aria-describedby="user-repeat-addon">
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">@errorMessage</div>
             </div>
         </div>
     </div>
 
     <div class="form-check mb-3">
-        <input name="agree" class="form-check-input" type="checkbox" value="" id="checkDefault">
+        @{
+            classAddon = Model.FormErrors == null
+                ? ""
+                : (Model.FormErrors.ContainsKey("Agree") ? "is-invalid" : "is-valid");
+
+            Model.FormErrors?.TryGetValue("Agree", out errorMessage);
+        }
+        <input name="agree" class="form-check-input @classAddon" type="checkbox" value="" id="checkDefault">
         <label class="form-check-label" for="checkDefault">
             Не буду нічого порушувати
         </label>
+        <div class="invalid-feedback">@errorMessage</div>
     </div>
     <button name="btn" value="send" type="submit" class="btn btn-primary"><i class="bi bi-send-fill"></i> Надіслати</button>
 </form>

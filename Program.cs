@@ -1,7 +1,9 @@
 using ASP_P26.Data;
+using ASP_P26.Services.Kdf;
 using ASP_P26.Services.Random;
 using ASP_P26.Services.Time;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +13,13 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddSingleton<ITimeService, SecTimeService>();
 builder.Services.AddSingleton<IRandomService, DefaultRandomService>();
 builder.Services.AddSingleton<ITimeService, MillisecTimeService>();
+builder.Services.AddSingleton<IKdfService, PbKdfService>();
+
+MySqlConnection connection = new(builder.Configuration.GetConnectionString("LocalDb"));
 
 builder.Services.AddDbContext<DataContext>(
-    options => options.UseSqlServer(
-        builder.Configuration.GetConnectionString("LocalDb"))
+    options => options.UseMySql(connection, ServerVersion.AutoDetect(connection))
 );
-
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -54,8 +57,8 @@ app.MapControllerRoute(
 
 
 app.Run();
-/* Д.З. Закласти проєкт курсової роботи
- * Реалізувати головну сторінку та шаблон
- * Створити контекст даних з сутностями щодо користувача
- * Створити форму реєстрації нового користувача
+/* пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  */

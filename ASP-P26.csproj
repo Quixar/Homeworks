@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Screenshots\" />
+    <Folder Include="Screenshots\hw_03.07.2025\" />
   </ItemGroup>
 
 </Project>

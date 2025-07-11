@@ -12,15 +12,17 @@ namespace ASP_P26.Controllers
     public class UserController(
         IRandomService randomService, 
         IKdfService kdfService,
-        DataContext dataContext) : Controller
+        DataContext dataContext,
+        ILogger<UserController> logger) : Controller
     {
         private readonly IRandomService _randomService = randomService;
         private readonly IKdfService _kdfService = kdfService;
         private readonly DataContext _dataContext = dataContext;
+        private readonly ILogger<UserController> _logger = logger;
         
-        UserSignUpPageModel pageModel = new();
         public ViewResult SignUp()
         {
+            UserSignUpPageModel pageModel = new();
             if (HttpContext.Session.Keys.Contains("UserSignUpFormModel"))
             {
                 pageModel.FormModel = JsonSerializer.Deserialize<UserSignUpFormModel>(
@@ -67,6 +69,13 @@ namespace ASP_P26.Controllers
                 {
                     errors[nameof(model.UserLogin)] = "Login не может иметь символ ':'";
                 }
+                else
+                {
+                    if (_dataContext.UserAccesses.Any(ua => ua.Login == model.UserLogin))
+                    {
+                        errors[nameof(model.UserRepeat)] = "Такой логин уже существует";
+                    }
+                }
             }
 
             if (string.IsNullOrEmpty(model.UserPassword))
@@ -75,11 +84,16 @@ namespace ASP_P26.Controllers
             }
             else
             {
+                if (string.IsNullOrEmpty(model.UserRepeat))
+                {
+                    errors[nameof(model.UserRepeat)] = "Повторите пароль";
+                }
+                
                 if (model.UserPassword != model.UserRepeat)
                 {
                     errors[nameof(model.UserRepeat)] = "Повтор не совпадает";
                 }
-
+                
                 if (model.UserPassword.Length < 6)
                 {
                     errors[nameof(model.UserPassword)] = "Пароль должен содержать минимум 6 символов";
@@ -95,10 +109,10 @@ namespace ASP_P26.Controllers
                 }
             }
 
-            if (!model.Agree)
-            {
-                errors[nameof(model.Agree)] = "Для создание аккаунта нужно принять соглашение";
-            }
+            // if (!model.Agree)
+            // {
+            //     errors[nameof(model.Agree)] = "Для создание аккаунта нужно принять соглашение";
+            // }
             #endregion
 
             if (errors.Count() == 0)
@@ -123,11 +137,22 @@ namespace ASP_P26.Controllers
                     RoleId = "SelfRegistered"
                 };
                 // додаємо нові об'єкти до контексту
+                _dataContext.Database.BeginTransaction();
                 _dataContext.Users.Add(user);
                 _dataContext.UserAccesses.Add(userAccess);
                 // після додавання даних до контексту вони доступні у програмі, але
                 // не передані до БД
-                _dataContext.SaveChanges();
+                try
+                {
+                    _dataContext.SaveChanges();
+                    _dataContext.Database.CommitTransaction();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError("ProcessSignUpData: {ex}", ex.Message);
+                    _dataContext.Database.RollbackTransaction();
+                    errors["500"] = "Проблема с сохранением данных. Попробуйте позже";
+                }
             }
             
             return errors;

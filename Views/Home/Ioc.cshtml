@@ -1,4 +1,4 @@
-﻿@inject ASP_P26.Services.Time.ITimeService timeService
+﻿@inject ASP_P26.Services.Time.IdentityService identity
 @{
     ViewData["Title"] = "IoC";
 }
@@ -7,7 +7,7 @@
     <h1 class="display-4">Інверсія управління</h1>
 </div>
 
-@ViewData["timestamp"] -- @timeService.GetHashCode()
+@ViewData["timestamp"]
 
 <p>
     Інверсія управління (Inversion of control, IoC) - архітектурний патерн, 

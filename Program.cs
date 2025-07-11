@@ -14,6 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IRandomService, DefaultRandomService>();
 builder.Services.AddSingleton<ITimeService, MillisecTimeService>();
 builder.Services.AddSingleton<IKdfService, PbKdfService>();
+builder.Services.AddSingleton<IdentityService>();
 
 MySqlConnection connection = new(builder.Configuration.GetConnectionString("LocalDb"));
 
@@ -55,6 +56,11 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<DataContext>();
+    await db.Database.MigrateAsync();     
+}
 
 app.Run();
 /* �.�. �������� ����� ������� ������

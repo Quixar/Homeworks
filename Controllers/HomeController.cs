@@ -12,12 +12,14 @@ namespace ASP_P26.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ITimeService _timeService;
         private readonly IRandomService _randomService;
+        private readonly IdentityService _identityService;
 
-        public HomeController(ILogger<HomeController> logger, ITimeService timeService, IRandomService randomService)
+        public HomeController(ILogger<HomeController> logger, ITimeService timeService, IRandomService randomService, IdentityService identityService)
         {
             _logger = logger;
             _timeService = timeService;
             _randomService = randomService;
+            _identityService = identityService;
         }
 
         public IActionResult Index()
@@ -27,7 +29,7 @@ namespace ASP_P26.Controllers
 
         public IActionResult Ioc()
         {
-            ViewData["timestamp"] = _timeService.Timestamp() + " -- " + _randomService.Otp();
+            ViewData["timestamp"] = _identityService.GetIdentity();
             return View();
         }
 

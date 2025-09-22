@@ -4,7 +4,7 @@ import { useContext, useRef } from "react";
 import AppContext from "../../features/context/AppContext";
 
 export default function Layout() {
-    const {user, setUser} = useContext(AppContext);
+    const {user, setUser, count} = useContext(AppContext);
     const closeModalRef = useRef();
 
     const authenticate = () => {
@@ -33,20 +33,21 @@ export default function Layout() {
                             <Link className="nav-link text-dark" to="/privacy">Privacy</Link>
                         </li>                        
                     </ul>
-                    <div>      
-                    {!!user && <>
-                        <button type="button" className="btn btn-outline-secondary"
-                                onClick={() => setUser(null)}>
-                            <i class="bi bi-box-arrow-right"></i>
-                        </button>
-                    </>}  
-                    {!user && <>
-                        <a ><i className="bi bi-person-circle"></i></a>
-                        <button type="button" className="btn btn-outline-secondary"
-                                data-bs-toggle="modal" data-bs-target="#authModal">
-                            <i className="bi bi-box-arrow-in-right"></i>
-                        </button>
-                    </>}
+                    <div>
+                        <h5 className="d-inline me-3">Підсумок: {count}</h5>
+                        {!!user && <>
+                            <button type="button" className="btn btn-outline-secondary"
+                                    onClick={() => setUser(null)}>
+                                <i class="bi bi-box-arrow-right"></i>
+                            </button>
+                        </>}  
+                        {!user && <>
+                            <a ><i className="bi bi-person-circle"></i></a>
+                            <button type="button" className="btn btn-outline-secondary"
+                                    data-bs-toggle="modal" data-bs-target="#authModal">
+                                <i className="bi bi-box-arrow-in-right"></i>
+                            </button>
+                        </>}
                     </div>
                 </div>
             </div>

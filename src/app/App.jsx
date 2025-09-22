@@ -8,8 +8,9 @@ import { useState } from 'react';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [count, setCount] = useState(0);
 
-  return <AppContext.Provider value={ {message: "Hello from App", user, setUser} }>
+  return <AppContext.Provider value={{ message: "Hello from App", user, setUser, count, setCount }}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >

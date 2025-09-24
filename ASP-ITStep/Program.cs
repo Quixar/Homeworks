@@ -9,6 +9,7 @@ using ASP_ITStep.Services.Storage;
 using ASP_ITStep.Services.Time;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,9 +28,10 @@ builder.Services.AddSingleton<IJwtService, JwtServiceV1>();
 builder.Services.AddSingleton<IStorageService, DiskStorageStorage>();
 
 
+MySqlConnection connection = new(builder.Configuration.GetConnectionString("LocalDb"));
+
 builder.Services.AddDbContext<DataContext>(
-    options => options.UseSqlServer(
-        builder.Configuration.GetConnectionString("LocalDb"))
+    options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)), ServiceLifetime.Singleton
 );
 
 builder.Services.AddScoped<DataAccessor>();

@@ -27,6 +27,9 @@ export default function Layout() {
                         <li className="nav-item">
                             <Link className="nav-link text-dark" to="/privacy">Privacy</Link>
                         </li>                        
+                        <li>
+                            <i onClick={() => toast({message: "Hello"})} className="bi bi-fork-knife"></i>
+                        </li>
                     </ul>
                     <div>      
                     {!!user && <>

@@ -22,6 +22,9 @@ function App() {
   const alarmRef = useRef();
   const [alarmData, setAlarmData] = useState({});
 
+  const [toastData, setToastData] = useState({}); 
+  const [isToastVisible, setToastVisible] = useState(false); 
+
   useEffect(() => {
     const storedToken = localStorage.getItem(tokenStorageKey);
     if(storedToken) {
@@ -70,7 +73,7 @@ function App() {
 
   const request = (url, conf) => new Promise((resolve, reject) => {
     if(url.startsWith('/')) {
-      url = "https://localhost:7229" + url;
+      url = "https://localhost:5074" + url;
       // автоматично підставляємо токен в усі запити
       // якщо він є і у запиті немає заголовка авторизації
       if(token) {
@@ -105,7 +108,11 @@ function App() {
     alarmRef.current.click();
   });
 
-  return <AppContext.Provider value={ {alarm, cart, request, updateCart, user, token, setToken, productGroups} }>
+  const toast = (data) => {
+    setToastVisible(!isToastVisible);
+  };
+
+  return <AppContext.Provider value={ {alarm, cart, request, toast, updateCart, user, token, setToken, productGroups} }>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
@@ -124,9 +131,21 @@ function App() {
       data-bs-toggle="modal" 
       data-bs-target="#alarmModal"></i>
     <Alarm alarmData={alarmData} />
+    <Toast style={{
+      position: 'absolute',
+      bottom: '20px',
+      left: '45vw',
+      borderRadius: '10px',
+      width: '10vw',
+      backgroundColor: '#888888',
+      display: isToastVisible ? 'block' : 'none',
+    }}/>
   </AppContext.Provider>;
 }
 
+function Toast({style}) {
+  return <div style={style}>Toast</div>
+}
 
 export default App;
 /*

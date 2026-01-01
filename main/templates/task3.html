@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="/task3/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зареєструватися</button>
+        </form>
+
+        {% if user_data %}
+            <div class="result-box">
+                <h3>Реєстрація успішна! Ваші дані:</h3>
+                <p>Повне ім'я: {{ user_data.first_name }} {{ user_data.last_name }}</p>
+                <p>Вік: {{ user_data.age }} </p>
+                <p>Email:{{ user_data.email }}</p>
+                <p>Стать:{{ user_data.gender_display }}</p>
+                <p>Адреса доставки:{{ user_data.address }}</p>
+                    <p>Підписка на новини:
+                        {% if user_data.subscribe %} Так {% else %} Ні {% endif %}</p>
+            </div>
+        {% endif %}
+</body>
+</html>

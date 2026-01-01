@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="/task2/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Обчислити</button>
+        </form>
+
+        {% if rez %}
+            {{ rez }}
+        {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="/task4/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% endif %}
+</body>
+</html>

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/ConsoleApp1/ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/ConsoleApp1/ConsoleApp1.csproj",
+      "projectUniqueName": "/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Server/Server.csproj",
+      "projectName": "Server",
+      "projectPath": "/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Server/Server.csproj",
       "packagesPath": "/Users/quixar/.nuget/packages/",
-      "outputPath": "/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/ConsoleApp1/obj/",
+      "outputPath": "/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/quixar/.nuget/NuGet/NuGet.Config"

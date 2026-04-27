@@ -12,3 +12,4 @@
 /Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.pdb
 /Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.genruntimeconfig.cache
 /Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/ref/Client.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.sourcelink.json

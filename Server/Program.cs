@@ -14,22 +14,46 @@ class Program
         string[] moves = { "rock", "paper", "scissors" };
         int playerWins = 0, serverWins = 0;
         Random rnd = new Random();
+        bool gameFinished = false;
 
-        Console.WriteLine("Server started. Waiting for player moves...");
+        Console.WriteLine("Server started. Waiting for player actions...");
 
-        for (int round = 1; round <= 5; round++)
+        for (int round = 1; round <= 5 && !gameFinished; round++)
         {
             UdpReceiveResult receiveResult = await udpServer.ReceiveAsync();
             clientEndPoint = receiveResult.RemoteEndPoint;
-            string playerMove = Encoding.UTF8.GetString(receiveResult.Buffer).ToLower().Trim();
+            string playerInput = Encoding.UTF8.GetString(receiveResult.Buffer).ToLower().Trim();
+
+            string responseMessage;
+            byte[] responseData;
+
+            if (playerInput == "surrender")
+            {
+                responseMessage = "EXIT|You surrendered. Server wins the game!";
+                responseData = Encoding.UTF8.GetBytes(responseMessage);
+                await udpServer.SendAsync(responseData, responseData.Length, clientEndPoint);
+                Console.WriteLine("Player surrendered.");
+                gameFinished = true;
+                break;
+            }
+
+            if (playerInput == "draw")
+            {
+                responseMessage = "EXIT|Draw offered and accepted. The game ends here.";
+                responseData = Encoding.UTF8.GetBytes(responseMessage);
+                await udpServer.SendAsync(responseData, responseData.Length, clientEndPoint);
+                Console.WriteLine("Game ended with a draw offer.");
+                gameFinished = true;
+                break;
+            }
 
             string serverMove = moves[rnd.Next(moves.Length)];
-
             string result;
-            if (playerMove == serverMove) result = "Draw";
-            else if ((playerMove == "rock" && serverMove == "scissors") ||
-                     (playerMove == "scissors" && serverMove == "paper") ||
-                     (playerMove == "paper" && serverMove == "rock"))
+
+            if (playerInput == serverMove) result = "Draw";
+            else if ((playerInput == "rock" && serverMove == "scissors") ||
+                     (playerInput == "scissors" && serverMove == "paper") ||
+                     (playerInput == "paper" && serverMove == "rock"))
             {
                 result = "You won the round";
                 playerWins++;
@@ -40,18 +64,22 @@ class Program
                 serverWins++;
             }
 
-            string status = $"{serverMove}|{result}|{playerWins}:{serverWins}";
-            byte[] responseData = Encoding.UTF8.GetBytes(status);
-            await udpServer.SendAsync(responseData, responseData.Length, clientEndPoint);
+            if (round == 5)
+            {
+                string finalResult = playerWins > serverWins ? "YOU WON THE GAME!" : 
+                                   serverWins > playerWins ? "SERVER WON THE GAME!" : "THE GAME IS A DRAW!";
+                responseMessage = $"LAST|{serverMove}|{result}|{playerWins}:{serverWins}|{finalResult}";
+            }
+            else
+            {
+                responseMessage = $"CONT|{serverMove}|{result}|{playerWins}:{serverWins}";
+            }
 
-            Console.WriteLine($"Round {round}: Player ({playerMove}) - Server ({serverMove})");
+            responseData = Encoding.UTF8.GetBytes(responseMessage);
+            await udpServer.SendAsync(responseData, responseData.Length, clientEndPoint);
+            Console.WriteLine($"Round {round}: Player ({playerInput}) - Server ({serverMove})");
         }
 
-        string final = playerWins > serverWins ? "YOU WON THE GAME!" : 
-                       serverWins > playerWins ? "SERVER WON THE GAME!" : "THE GAME IS A DRAW!";
-        byte[] finalData = Encoding.UTF8.GetBytes(final);
-        await udpServer.SendAsync(finalData, finalData.Length, clientEndPoint);
-
-        Console.WriteLine("Game finished. Server shutting down.");
+        Console.WriteLine("Server session finished.");
     }
 }

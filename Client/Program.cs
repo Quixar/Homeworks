@@ -8,44 +8,58 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        Console.WriteLine("Commands: 'rock', 'paper', 'scissors', 'draw' (offer a draw), 'surrender' (admit defeat)");
+
         using UdpClient udpClient = new UdpClient();
         IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5002);
 
         try
         {
-            for (int i = 1; i <= 5; i++)
-            {
-                string move = "";
-                while (move != "rock" && move != "paper" && move != "scissors")
-                {
-                    Console.Write($"\nRound {i}. Enter your move (rock, paper, scissors): ");
-                    move = Console.ReadLine()?.ToLower().Trim() ?? "";
-                }
+            bool keepPlaying = true;
+            int round = 1;
 
-                byte[] dataToSend = Encoding.UTF8.GetBytes(move);
+            while (keepPlaying && round <= 5)
+            {
+                Console.Write($"\nRound {round}. Enter your move or command: ");
+                string input = Console.ReadLine()?.ToLower().Trim() ?? "";
+
+                if (string.IsNullOrEmpty(input)) continue;
+
+                byte[] dataToSend = Encoding.UTF8.GetBytes(input);
                 await udpClient.SendAsync(dataToSend, dataToSend.Length, serverEndPoint);
 
                 UdpReceiveResult result = await udpClient.ReceiveAsync();
                 string response = Encoding.UTF8.GetString(result.Buffer);
+                string[] parts = response.Split('|');
 
-                var parts = response.Split('|');
-                if (parts.Length == 3)
+                if (parts[0] == "EXIT")
                 {
-                    Console.WriteLine($"-> Server chose: {parts[0]}");
-                    Console.WriteLine($"-> Result: {parts[1]}");
-                    Console.WriteLine($"-> Current Score: {parts[2]}");
+                    Console.WriteLine($"\n>>> {parts[1]}");
+                    keepPlaying = false;
+                }
+                else if (parts[0] == "CONT" || parts[0] == "LAST")
+                {
+                    Console.WriteLine($"-> Server chose: {parts[1]}");
+                    Console.WriteLine($"-> Round Result: {parts[2]}");
+                    Console.WriteLine($"-> Current Score: {parts[3]}");
+
+                    if (parts[0] == "LAST")
+                    {
+                        Console.WriteLine("\n==============================");
+                        Console.WriteLine(parts[4]);
+                        Console.WriteLine("==============================");
+                        keepPlaying = false;
+                    }
+                    round++;
                 }
             }
-
-            UdpReceiveResult finalResult = await udpClient.ReceiveAsync();
-            Console.WriteLine(Encoding.UTF8.GetString(finalResult.Buffer));
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Connection error: {ex.Message}");
+            Console.WriteLine($"Error: {ex.Message}");
         }
 
-        Console.WriteLine("\nPress Enter to exit...");
+        Console.WriteLine("\nDisconnected. Press Enter to exit...");
         Console.ReadLine();
     }
 }

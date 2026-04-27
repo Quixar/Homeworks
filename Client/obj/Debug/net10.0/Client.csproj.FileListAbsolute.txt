@@ -1,0 +1,14 @@
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/bin/Debug/net10.0/Client
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/bin/Debug/net10.0/Client.deps.json
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/bin/Debug/net10.0/Client.runtimeconfig.json
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/bin/Debug/net10.0/Client.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/bin/Debug/net10.0/Client.pdb
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.AssemblyInfoInputs.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.AssemblyInfo.cs
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.csproj.CoreCompileInputs.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/refint/Client.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.pdb
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/Client.genruntimeconfig.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_25.02.2025/ConsoleApp1/Client/obj/Debug/net10.0/ref/Client.dll

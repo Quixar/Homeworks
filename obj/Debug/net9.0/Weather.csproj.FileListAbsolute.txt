@@ -1,0 +1,17 @@
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/bin/Debug/net9.0/Weather
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/bin/Debug/net9.0/Weather.deps.json
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/bin/Debug/net9.0/Weather.runtimeconfig.json
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/bin/Debug/net9.0/Weather.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/bin/Debug/net9.0/Weather.pdb
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.csproj.AssemblyReference.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.AssemblyInfoInputs.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.AssemblyInfo.cs
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.csproj.CoreCompileInputs.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.csproj.Up2Date
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/refint/Weather.dll
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.pdb
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/Weather.genruntimeconfig.cache
+/Users/quixar/ITSTEP/Net_prog/Lessons/Les_06.03.2025/Weather/Weather/obj/Debug/net9.0/ref/Weather.dll

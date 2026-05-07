@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/dialogEtFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="Ім'я"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/dialogEtLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="Прізвище"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/dialogEtAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Вік"
+        android:inputType="number"
+        android:padding="12dp" />
+
+</LinearLayout>

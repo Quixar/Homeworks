@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="usd_label">USD: --</string>
+    <string name="eur_label">EUR: --</string>
+    <string name="gbp_label">GBP: --</string>
+    <string name="refresh_button">Оновити курси</string>
+    <string name="error_processing">Помилка обробки даних</string>
+    <string name="error_network">Помилка мережі</string>
+</resources>

@@ -1,0 +1,44 @@
+.calc {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    background-color: #323232;
+    padding: 3px;
+}
+.calc-expression, .calc-display {
+    width: 100%;
+    text-align: right; 
+    background-color: #323232; 
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+.calc-expression {
+    height: 25px;
+    font-size: 14px;
+    color: #bebebe;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.calc-display {
+    height: 45px;
+    /* font-size: 36px; перенесено до JSX */
+    font-weight: 600;
+    color: #fefefe;
+}
+.calc-row {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.calc-row .col {
+    padding: 0 !important;
+}
